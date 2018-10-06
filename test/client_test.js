@@ -353,3 +353,8 @@ vows.describe('Client').addBatch({
     }
   }
 }).export(module)
+
+
+process.on('uncaughtException', function(err) {
+console.log('Caught exception: ' + err.stack);
+});

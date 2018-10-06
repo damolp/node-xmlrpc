@@ -276,14 +276,14 @@ vows.describe('Deserializer').addBatch({
 // Macros & Utilities
 //==============================================================================
 
-function fixtureStream(f) {
-  return fs.createReadStream(path.join(__dirname, 'fixtures', f))
+function testFile(f) {
+  return fs.readFileSync(path.join(__dirname, 'fixtures', f), 'utf8')
 }
 
 function deserializeMethodResponseFixture(f) {
   return function() {
     var deserializer = new Deserializer()
-    deserializer.deserializeMethodResponse(fixtureStream(f), this.callback)
+    deserializer.deserializeMethodResponse(testFile(f), this.callback)
   }
 }
 
@@ -297,6 +297,7 @@ function assertError(error, result) {
 
 function assertOk(error, result) {
   assert.isTrue( ! error)
+
 }
 
 function assertResponse(what) {
