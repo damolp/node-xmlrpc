@@ -23,7 +23,7 @@
     },
     "main": "./lib/xmlrpc.js",
     "dependencies": {
-        "saxen": "8.0.x",
+        "saxen": "8.1.x",
         "xmlbuilder": "8.2.x"
     },
     "devDependencies": {
